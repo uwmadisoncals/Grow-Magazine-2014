@@ -533,6 +533,12 @@ body {
 	font-size: 20px;
 	line-height: 1.3em;
 }
+
+.entry-excerpt {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
 .one-column article.feature-image.small .entry-summary {
 	height: 150px;
 	overflow: hidden;
@@ -1776,7 +1782,7 @@ article.format-status .entry-content {
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
 	border-bottom: none;
-	padding: 4.875em 0 0;
+	padding: 0em 0 0;
 	position: relative;
 }
 .singular.page .hentry {
@@ -3980,6 +3986,14 @@ a code {
 	color: #deb846;
 }
 
+#page .featureCaption {
+	h2 {
+		a {
+			color: #fff;
+		}
+	}
+}
+
 a:hover,
 a:hover code {
   color: #4BF;
@@ -4258,27 +4272,71 @@ min-height: 220px;
 
 	h3.issueTitle {
 		color: #fff;
-		background: #e5960d;
+		background: #fcae26;
 		padding: 0.7em;
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
 		font-size: 0.8em;
 		text-transform: uppercase;
 		letter-spacing: 1px;
+
+		
+	}
+
+
+	svg {
+		margin-top: 4px;
+		height: 1.3em;
+		width: 1.3em;
+		float: left;
+		margin-right: 8px;
+
+		polygon,path,circle {
+			fill: #fff;
+		}
 	}
 
 	ul {
+		list-style: none;
+
 		li {
-			a {
-				display: block;
+			list-style: none;
+
+			.tocItem {
+				border-bottom: 1px solid rgba(0,0,0,0.1);
+
+				h3 {
+
+
+					a {
+						display: block;
+						font-weight: 300;
+						font-size: 1.25em;
+						font-family: "Raleway";
+						padding-right: 1em;
+						min-height: 40px;
+						color: rgba(0,0,0,0.8);
+						
+					}
+
+				}
+
+				
+
+			}
+
+			.tocPhoto {
+				border-radius: 50em;
+				overflow: hidden;
+				
+				width: 40px;
+				height: 40px;
+
 
 				img {
-					width: 30px;
-					
-					height: 30px;
-					border-radius: 50em;
-					overflow: hidden;
-				}
+						width: 100%;
+						height: auto;
+					}
 			}
 		}
 	}
@@ -4767,6 +4825,7 @@ transform: rotate(900deg);
 	font-size: 16px;
 	line-height: 20px;
 	margin-top: 12px;
+	font-weight: normal;
 }
 
 .eventsBox .uwmadison_events_container {
@@ -4887,7 +4946,7 @@ border-radius: 0px;
 	width: 75%;
 	box-sizing: border-box;
 	float: left;
-
+	min-height: 1px;
 }
 
 .span-25 {
@@ -4895,6 +4954,12 @@ border-radius: 0px;
 	box-sizing: border-box;
 	float: left;
 	margin-right: 1%;
+	min-height: 1px;
+}
+
+.span-25.alt {
+	width: 20%; 
+	margin-right: 5%;
 }
 
 .box.span-33:last-child {

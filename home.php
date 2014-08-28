@@ -28,27 +28,39 @@ get_header(); ?>
 
 			<div class="row clearfix">
 			<div class="span-25">
-				<div class="toc">
-					<h3 class="issueTitle">Summer 2014 Issue</h3>
+				<div class="toc clearfix">
+					<h3 class="issueTitle"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 471.8 351.1" enable-background="new 0 0 471.8 351.1" xml:space="preserve">
+<path d="M456.4,81.5H130.7c-6.6,0-12-5.4-12-12V13c0-6.6,5.4-12,12-12h325.7c6.6,0,12,5.4,12,12v56.5
+	C468.4,76.1,463,81.5,456.4,81.5z"/>
+<path d="M456.4,209.1H130.7c-6.6,0-12-5.4-12-12v-56.5c0-6.6,5.4-12,12-12h325.7c6.6,0,12,5.4,12,12v56.5
+	C468.4,203.7,463,209.1,456.4,209.1z"/>
+<path d="M374.4,346.4H130.7c-6.6,0-12-5.4-12-12v-56.5c0-6.6,5.4-12,12-12h243.7c6.6,0,12,5.4,12,12v56.5
+	C386.4,341,381,346.4,374.4,346.4z"/>
+<circle cx="40.6" cy="41.3" r="38.6"/>
+<circle cx="40.6" cy="168.8" r="38.6"/>
+<circle cx="40.6" cy="306.1" r="38.6"/>
+</svg> <span>Summer 2014 Issue</span></h3>
 
 					<div class="tocContent">
 						<ul>
-						<?php query_posts(array('category__and' => array($current_issue), "showposts" => '20', 'orderby'=>'date', 'order'=> 'desc')); ?>
+						<?php query_posts(array('cat' => '-470', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
 
 												
-							  	<li>
+							  	<li class="row clearfix">
 														
-							  		<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
+							  		
 														
 								
 
 
 
 
-
+							  	<div class="span-25 alt">
+							  		<div class="tocPhoto">
 							  <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
@@ -66,11 +78,14 @@ get_header(); ?>
 		
 
 						} ?>
-			
-											<h3 class="spotlight_title"><?php the_title(); ?></h3>
-											<p><?php the_excerpt(); ?></p>
+							</div>
+						</div>
+										<div class="tocItem span-75">
+											<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											
+											</div>
                                              
-                            				</a> 
+                            				 
 
 										</li>
 

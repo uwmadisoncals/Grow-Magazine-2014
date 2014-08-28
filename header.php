@@ -120,7 +120,7 @@ $current_colorscheme = $options['link_color'];
 ?>
 
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
-
+<?php $current_issue = get_option('current_issue'); ?>
 <div id="mobile-menu">
 	<div id="mobile-menu-inner">
 	<!--<div class="mobile-search"><input type="search" placeholder="Search" /></div>-->
@@ -388,7 +388,7 @@ $loopcount = $loopcount + 1;
 
   			<div class="featureCaption">
   				<div class="centered">
-  				<h2><?php the_title(); ?></h2>
+  				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	  				<div class="featuresubtitle">
 	  				<?php the_excerpt(); ?>

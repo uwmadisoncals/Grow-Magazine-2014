@@ -40,7 +40,7 @@ $(function(){
              if(imgtype == "background") {
 
                newtophalf = ""+((newtop-offset) * ratio) +"px";
-               newtophalf2 = ""+(((newtop-offset) * ratio)-400) +"px";
+               newtophalf2 = ""+(((newtop-offset) * ratio)-500) +"px";
                headertranslate = "0px "+newtophalf+"";
                headertranslate2 = "0px "+newtophalf2+"";
 

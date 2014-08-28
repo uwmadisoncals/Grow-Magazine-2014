@@ -8,14 +8,36 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	 <?php	if ( has_post_thumbnail() ) { ?>
-		 					<div class="featuredImage">
-		    					<?php echo get_the_post_thumbnail($page->ID, 'large'); ?>
-		 					</div>
-						<?php } ?>
+		
+		 <div class="featuredImage">	
+    <?php 
+	
+	//FLICKR BOX or IMAGE BOX
+	global $current_user;
+	
+	if ( has_post_thumbnail() ) { 
+		echo get_the_post_thumbnail($page->ID, 'large');
+	} else {
+
+		if (get_post_meta($post->ID, 'flickr_slideshow_url', true)!="") {
+			include ("functions/grow_flickr_box.php");
+		} else 	if (get_post_meta($post->ID, 'flickr_image_url', true)!="") {
+			include ("functions/grow_flickr_image.php");
+		}
+	}
+	 ?>
+	</div>
+	
+		
+
+		
+
+		    				
+		 					
+						
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-
+		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php twentyeleven_posted_on(); ?>
