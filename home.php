@@ -115,7 +115,7 @@ get_header(); ?>
 
 					<div class="span-50 box dropin">
 
-							<h2>Featured</h2>
+							<h2>Feature</h2>
 
 							
 	
@@ -143,7 +143,7 @@ get_header(); ?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -195,7 +195,7 @@ get_header(); ?>
 				<div class="row clearfix">
 
 					<div class="span-33 box dropin3">
-							<h2>AROUND THE COLLEGE</h2>
+							
 
 							
 <?php query_posts(array('category__and' => array(25,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
@@ -221,7 +221,7 @@ get_header(); ?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -262,7 +262,7 @@ get_header(); ?>
 					</div>
 
 					<div class="span-33 box dropin3">
-							<h2>AROUND THE COLLEGE</h2>
+							
 
 							
 <?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
@@ -288,7 +288,7 @@ get_header(); ?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -329,7 +329,7 @@ get_header(); ?>
 					</div>
 
 					<div class="span-33 box dropin3">
-							<h2>AROUND THE COLLEGE</h2>
+							
 
 							
 <?php query_posts(array('category__and' => array(27,$current_issue), "showposts" => '1', "orderby" => "post_date", "order" => "asc")); ?>
@@ -355,7 +355,7 @@ get_header(); ?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>

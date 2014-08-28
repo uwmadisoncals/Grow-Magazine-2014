@@ -450,4 +450,4 @@ $loopcount = $loopcount + 1;
 		<div class="headershade"></div>
 		<!-- end of feature slider -->
 
-</div>
+</div><?php wp_reset_query(); ?>
