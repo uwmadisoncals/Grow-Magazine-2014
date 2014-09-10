@@ -55,7 +55,8 @@ add_filter( ‘xmlrpc_methods’, function( $methods ) {
 //GET ARTICLE'S FLICKR IMAGE
 include("includes/functions/grow_get_article_flickr_image.php");
 
-
+//GROW ADMIN ISSUE OPTIONS MENU
+include("includes/functions/grow_issue_options_menu.php");
 
 
 include("includes/functions/grow_post_package_list.php");

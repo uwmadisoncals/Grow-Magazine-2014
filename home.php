@@ -192,11 +192,10 @@ get_header(); ?>
 
 				</div>
 
+				
 				<div class="row clearfix">
-
-					<div class="span-33 box dropin3">
-							
-
+					<div class="span-33 box doubleheight">
+						
 							
 <?php query_posts(array('category__and' => array(25,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
@@ -261,8 +260,9 @@ get_header(); ?>
 						<div class="shade"></div>
 					</div>
 
-					<div class="span-33 box dropin3">
-							
+					<div class="span-66">
+						
+						<div class="box span-100 dropin">
 
 							
 <?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
@@ -326,10 +326,9 @@ get_header(); ?>
 						</div>
 
 						<div class="shade"></div>
-					</div>
+						</div>
 
-					<div class="span-33 box dropin3">
-							
+						<div class="box span-100 dropin2">
 
 							
 <?php query_posts(array('category__and' => array(27,$current_issue), "showposts" => '1', "orderby" => "post_date", "order" => "asc")); ?>
@@ -393,7 +392,151 @@ get_header(); ?>
 						</div>
 
 						<div class="shade"></div>
+						</div>
+
 					</div>
+
+
+					<div class="row clearfix">
+					<div class="span-50 box doubleheight">
+						
+							
+<?php query_posts(array('category__and' => array(24,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
+
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'medium');
+
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 //echo catch_that_news_image();
+							// echo '" alt="" />';
+
+		    					 
+							//get article image from flickr
+							grow_get_article_image($size='medium');
+		
+
+						} ?>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>
+
+
+
+
+
+
+  <?php endwhile; ?>
+<?php endif; ?>
+
+							<a href="http://ecals.cals.wisc.edu" class="moreButton">More from the College</a>
+						<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div>
+
+						<div class="shade"></div>
+					</div>
+
+					<div class="span-50 box doubleheight">
+						
+						
+
+							
+<?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
+
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'medium');
+
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 //echo catch_that_news_image();
+							// echo '" alt="" />';
+
+		    					 
+							//get article image from flickr
+							grow_get_article_image($size='medium');
+		
+
+						} ?>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>
+
+
+
+
+
+
+  <?php endwhile; ?>
+<?php endif; ?>
+
+							<a href="http://ecals.cals.wisc.edu" class="moreButton">More from the College</a>
+						<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div>
+
+						<div class="shade"></div>
+						</div>
+
+						
+
+					</div>
+
+
 
 				</div>
 

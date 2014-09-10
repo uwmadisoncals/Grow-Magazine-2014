@@ -2677,6 +2677,8 @@ section.ephemera .entry-title a span {
 }
 
 
+
+
 /* =Comments
 ----------------------------------------------- */
 
@@ -4235,6 +4237,8 @@ min-height: 220px;
 	height: 160px;
 }
 
+
+
 .row {
 	margin-bottom: 0px;
 }
@@ -4868,6 +4872,12 @@ transform: rotate(900deg);
 	height: 200px;
 }
 
+.home.page .fullWidth .row div.box.doubleheight {
+	height: 405px;
+}
+
+
+
 .page-id-64 .row .box {
 	height: 230px;
 }
@@ -4940,6 +4950,31 @@ border-radius: 0px;
 	width: 32.3%;
 	margin-right: 1%;
 	float: left;
+}
+
+.box.span-100 {
+	
+	margin-bottom: 1%;
+}
+
+.box {
+	box-sizing: border-box;
+
+}
+
+.span-33 {
+	width: 32%;
+	box-sizing: border-box;
+	float: left;
+	min-height: 1px; 
+	margin-right: 1%; 
+}
+
+.span-66 {
+	width: 66%;
+	box-sizing: border-box;
+	float: left;
+	min-height: 1px;  
 }
 
 .span-75 {
