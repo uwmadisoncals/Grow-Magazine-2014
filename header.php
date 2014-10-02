@@ -256,14 +256,34 @@ while (have_posts()) : the_post();?>
 			  		<li><a href="#">Outreach</a></li>
   				</ul>-->
 
+<div class="pdfDownload">
 
-  						<?php
-				// Has the text been hidden?
-				if ( 'blank' == get_header_textcolor() ) :
-			?>
+
+
+<?php 
+query_posts(array('category__and' => array(1079,$current_issue), "showposts" => '1') );
+while (have_posts()) : the_post();?>
+	<a href="<?php the_field('pdf_issue'); ?>"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path d="M25,47.4l-5.7-5.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l4.3,4.3l4.3-4.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L25,47.4z"/>
+<g>
+	<path d="M41.1,36H32c-0.6,0-1-0.4-1-1s0.4-1,1-1h9.1c3.8,0,6.9-3.1,6.9-6.9s-3.1-6.9-6.9-6.9c-0.3,0-0.6-0.1-0.8-0.3
+		c-0.2-0.2-0.3-0.5-0.3-0.8c0.1-0.5,0.1-1,0.1-1.4c0-6.1-5-11.1-11.1-11.1c-4.6,0-8.8,2.9-10.4,7.3c-0.1,0.3-0.4,0.6-0.7,0.6
+		c-0.3,0.1-0.7,0-0.9-0.3c-0.9-0.9-2.2-1.5-3.5-1.5c-2.8,0-5,2.2-5,5l0,0.2c0,0.5-0.3,0.9-0.7,1c-3.3,0.9-5.6,4-5.6,7.4
+		C2,30.6,5.4,34,9.7,34H18c0.6,0,1,0.4,1,1s-0.4,1-1,1H9.7C4.3,36,0,31.7,0,26.3c0-4.1,2.6-7.7,6.4-9.1c0.2-3.6,3.3-6.5,7-6.5
+		c1.4,0,2.7,0.4,3.9,1.2C19.4,7.4,24,4.5,29,4.5c7.3,0,13.1,5.9,13.1,13.1c0,0.2,0,0.4,0,0.6c4.4,0.5,7.9,4.3,7.9,8.8
+		C50,32,46,36,41.1,36z"/>
+	<path d="M25,46.7c-0.6,0-1-0.4-1-1V26c0-0.6,0.4-1,1-1s1,0.4,1,1v19.7C26,46.2,25.6,46.7,25,46.7z"/>
+</g>
+</svg> Download PDF</a>      
+<?php endwhile; ?>
+<?php wp_reset_query(); ?>
+				</div>
+  				
+				
+
 				<div class="globalSearch">
 				<?php get_search_form(); ?>
-				<?php //cals_uw_directory_search($small=true, $add_class = 'search_results'); ?>
 				<div class="filtered" style="display: none;">
 					<ul>
 					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
@@ -294,8 +314,6 @@ $pages = get_pages();
   //cals_uw_directory_search($small=true, $add_class = 'search_results');
 
   ?>
-<li><a href="http://www.cals.wisc.edu/agoutlook/">Wisconsin Agricultural Economic Outlook Forum</a><span style="display:none;">Ag outlook</span></li>
-<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
@@ -305,11 +323,7 @@ $pages = get_pages();
 					<div class="directory"></div>
 				</div>
 				</div>
-			<?php
-				else :
-			?>
-				<?php get_search_form(); ?>
-			<?php endif; ?>
+			
 				</div>
 
 

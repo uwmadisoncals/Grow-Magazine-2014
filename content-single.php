@@ -19,11 +19,28 @@
 		echo get_the_post_thumbnail($page->ID, 'large');
 	} else {
 
+
+		
+
+$image_ids = get_field('featured_gallery', false, false);
+
+	if($image_ids) {
+
+$shortcode = '[gallery ids="' . implode(',', $image_ids) . '" link="file"]';
+
+echo do_shortcode( $shortcode );
+
+	} else {
+
+
+
+
 		if (get_post_meta($post->ID, 'flickr_slideshow_url', true)!="") {
 			include ("functions/grow_flickr_box.php");
 		} else 	if (get_post_meta($post->ID, 'flickr_image_url', true)!="") {
 			include ("functions/grow_flickr_image.php");
 		}
+	}
 	}
 	 ?>
 	</div>

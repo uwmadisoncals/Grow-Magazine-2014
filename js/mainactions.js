@@ -1,5 +1,5 @@
 $(function(){
-
+ 
 
 /***** Main Parallax/position functions ******/
        //ar chromefix;

@@ -57,12 +57,16 @@
 	}
 	
 		
-	#nav_sidebar, .searchSidebar {
+	#nav_sidebar, .searchSidebar, .sidebarRow {
 		position: absolute;
-		top: 0px;
+		top: 200px;
 		right: 0px;
 		bottom: 28px;
 		z-index:5;
+	}
+
+	#nav_sidebar {
+		display: none;
 	}
 	
 	#main { 
@@ -243,7 +247,7 @@
 		padding-top: 0px;
 	}
 	
-	#nav_sidebar {
+	#nav_sidebar, .sidebarRow {
 		display: none;
 		float: none;
 		left: 0px;
