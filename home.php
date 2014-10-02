@@ -34,7 +34,7 @@ get_header(); ?>
 
 
 <?php 
-query_posts(array('category__and' => array(1079,$current_issue), "showposts" => '1') );
+query_posts(array('category__and' => array(1080,$current_issue), "showposts" => '1') );
 while (have_posts()) : the_post();?>
 	<a href="<?php the_field('pdf_issue'); ?>"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
