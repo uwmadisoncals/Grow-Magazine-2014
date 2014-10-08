@@ -378,7 +378,10 @@ a img {
 	border: 0;
 }
 
-
+.gallery-item {
+	max-height: 360px;
+	overflow: hidden;
+}
 
 .wp-caption .wp-caption-text, dd.gallery-caption {
 	float: right;
