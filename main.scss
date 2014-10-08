@@ -378,6 +378,36 @@ a img {
 	border: 0;
 }
 
+
+
+.wp-caption .wp-caption-text, dd.gallery-caption {
+	float: right;
+	width: 50%;
+	text-align: right;
+	font-family: "Raleway","Open Sans",sans-serif;
+	padding: 1em;
+	font-size: 0.8em;
+	line-height: 1.6em;
+}
+
+.wp-caption-text:before,
+.wp-caption-text:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.wp-caption-text:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.wp-caption-text {
+    *zoom: 1;
+}
+
 .pull-quote {
 	display:block;
 	float: right;
@@ -391,6 +421,8 @@ a img {
 	font-style: italic;
 
 }
+
+
 
 .pull-quote.left {
 	display:block;
@@ -5699,7 +5731,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 .collegeFeature {
 	width: 100%;
 	margin: 0 auto;
-	height: 580px;
+	height: 530px;
 	position: relative;
 	z-index:2;
 	overflow: hidden;
@@ -5710,7 +5742,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	}
 
 .collegeFeature .slideImage {
-	height: 580px;
+	height: 530px;
 	-ms-filter: blur(8px);
 	-webkit-filter: blur(8px);
 	-moz-filter: blur(8px);
@@ -5726,7 +5758,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 }
 
 .collegeFeature .slideImageSeperate {
-	height: 580px;
+	height: 530px;
 	overflow: hidden;
 	width: 100%;
 
@@ -6157,7 +6189,7 @@ background-size: 100% auto;
 
 .headerPhotoBg {
 	z-index:1;
-	height: 580px;
+	height: 530px;
 	position: relative;
 
 	transform: translateZ(0);
@@ -6209,7 +6241,7 @@ background-size: 100% auto;
 	overflow: hidden;
 	float: left;
 	width: auto;
-	height: 580px;
+	height: 530px;
 
 }
 

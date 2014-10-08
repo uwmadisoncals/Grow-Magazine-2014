@@ -26,11 +26,11 @@ $image_ids = get_field('featured_gallery', false, false);
 
 	if($image_ids) {
 
-$shortcode = '[gallery ids="' . implode(',', $image_ids) . '" link="file"]';
+$shortcode = '[gallery ids="' . implode(',', $image_ids) . '" link="file" size="large"]';
 
-echo do_shortcode( $shortcode );
-
-	} else {
+echo do_shortcode( $shortcode );?>
+	
+	<?php } else {
 
 
 
