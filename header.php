@@ -402,6 +402,7 @@ $loopcount = $loopcount + 1;
 
   			<div class="featureCaption">
   				<div class="centered">
+  				<div class="featureCS">Cover Story</div>
   				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	  				<div class="featuresubtitle">
