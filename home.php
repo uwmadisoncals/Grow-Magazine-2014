@@ -55,7 +55,59 @@ while (have_posts()) : the_post();?>
 
 					<div class="tocContent">
 						<ul>
-						<?php query_posts(array('cat' => '-470', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '26', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'asc')); ?>
+
+							<?php if (have_posts()) : ?>
+							  <?php while (have_posts()) : the_post();  ?>
+
+												
+							  	<li class="row clearfix">
+														
+							  		
+														
+								
+
+
+
+
+							  	<div class="span-25 alt">
+							  		<div class="tocPhoto">
+							  <?php	if ( has_post_thumbnail() ) {
+
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'thumbnail');
+
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 //echo catch_that_news_image();
+							// echo '" alt="" />';
+
+		    					 
+							//get article image from flickr
+							grow_get_article_image($size='thumbnail');
+		
+
+						} ?>
+							</div>
+						</div>
+										<div class="tocItem span-75">
+											<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											
+											</div>
+                                             
+                            				 
+
+										</li>
+
+
+
+
+									
+
+							  <?php endwhile; ?>
+						<?php endif; ?>
+						<?php query_posts(array('cat' => '-470,-26', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
@@ -119,7 +171,7 @@ while (have_posts()) : the_post();?>
 				<div class="row clearfix">
 
 
-<?php query_posts(array('cat'=>'-26', 'category__and' => array(17, $current_issue), "showposts" => '2', 'orderby'=>'date', 'order'=> 'desc')); ?>
+<?php query_posts(array('category__and' => array(17, $current_issue), "showposts" => '2', 'orderby'=>'date', 'order'=> 'desc')); ?>
 
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
@@ -154,7 +206,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -208,7 +260,7 @@ while (have_posts()) : the_post();?>
 					<div class="span-33 box doubleheight">
 						
 							
-<?php query_posts(array('category__and' => array(25,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -231,7 +283,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -276,7 +328,7 @@ while (have_posts()) : the_post();?>
 						<div class="box span-100 dropin">
 
 							
-<?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array(17,$current_issue), "cat" => "-26", "showposts" => '1', "offset" => "1", "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -299,7 +351,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -365,7 +417,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -412,7 +464,7 @@ while (have_posts()) : the_post();?>
 					<div class="span-50 box doubleheight">
 						
 							
-<?php query_posts(array('category__and' => array(24,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-24,-470","offset" => '2', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -435,7 +487,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -480,7 +532,7 @@ while (have_posts()) : the_post();?>
 						
 
 							
-<?php query_posts(array('category__and' => array(20,$current_issue), "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-24,-470","offset" => '3', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -503,7 +555,7 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											
+											<p><?php the_excerpt(); ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
