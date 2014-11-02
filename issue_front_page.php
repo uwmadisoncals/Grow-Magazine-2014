@@ -16,7 +16,7 @@
 	while (have_posts()) : the_post();?>
 	
 	<div id="featured_main">
-	
+	tada
 			<?php if ( get_post_meta($post->ID, 'image', true) ) { ?> <!-- DISPLAYS THE IMAGE URL SPECIFIED IN THE CUSTOM FIELD -->
 			
             <a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark">    

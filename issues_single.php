@@ -15,9 +15,11 @@
 	get_header(); 
 	?>
     
-    
+   <div id="main">
+
+		<div id="primary"> 
 	    
-<div id="content">
+<div id="content" role="main">
 	<?php 
 	
 		//GET MAIN FEATURED STORY
@@ -108,4 +110,11 @@
 
 <?php get_sidebar(); ?>
 
+<div class="clear"></div>
+			
+		</div><!-- #primary -->
+
+	</div>
 <?php get_footer(); ?>
+
+</div>

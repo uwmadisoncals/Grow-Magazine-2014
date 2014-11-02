@@ -7,6 +7,8 @@ html
 			touch-action: manipulation;
 		}
 
+
+
 		#imagelightbox
 		{
 			cursor: pointer;
@@ -478,6 +480,8 @@ footer, header, hgroup, menu, nav, section {
 .ieWarning h1 {
 	font-size: 20px;
 }
+
+
 
 .search #cals_uwds {
 	display: block;
@@ -4619,10 +4623,52 @@ min-height: 220px;
 .sidebarRow {
 	float: right;
 	width: 230px;
+	margin-bottom: 1em;
 }
 
 .sidebarRow.row .box {
 	height: 160px;
+}
+
+#current_issue_img {
+	float: right;
+	padding-left: 4em;
+
+}
+
+#current_issue_desc {
+		h1,h2,h3,h4,h5,h6 {
+			clear: none;
+		}
+	}
+
+.issueList .box_content {
+	padding: 1em;
+
+	.issues a:first-child {
+		float: left;
+		display:block;
+		height: 100px;
+		width: 76px;
+	}
+
+	.issues .left {
+		clear: both;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
+
+	.issue_pic {
+		height: 100px;
+		width: 76px;
+		background-size: cover;
+	}
+
+	.issue_title {
+		font-family: "Raleway";
+		font-size: 1.2em;
+	}
 }
 
 

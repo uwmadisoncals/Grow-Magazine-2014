@@ -9,14 +9,90 @@
 $options = twentyeleven_get_theme_options();
 $current_layout = $options['theme_layout'];
 
+global $current_user;
+$current_issue = get_option('current_issue');
+
+if (current_user_can('admin') && $_GET['tci']!="") {
+	$current_issue = $_GET['tci'];
+}
+
+global $is_issue_page;
+
+if ($is_issue_page==1){?>
+        <div class="box sidebarRow issueList">
+        	<div class="row">
+        		<div class="toc">
+            <h3 class="issueTitle">List of Issues</h3>
+                <div class="box_content">
+          		<div class="issues"><?php 
+				
+				$issues = get_categories('child_of=10&hide_empty=true');
+	
+					
+				//order issues by season
+				$season_order = array('spring' => 'mar', 'summer' => 'jul', 'fall' => 'sept', 'winter' => 'nov');
+				foreach ($issues as $issue){
+					$season_info = explode(" ", $issue->name);
+					$m =  strtolower($season_info[0]);
+					$y =  $season_info[1];
+					
+					//create a timestamp array to be used to order issues
+					$key = time() - strtotime($season_order[$m].' '.$season_info[1]);
+					
+					//store in new array
+					$ordered_issues[$key] = $issue;
+					
+					 
+				}
+
+				ksort($ordered_issues);
+				$issues = $ordered_issues;
+	
+				//display issues 
+				$issue_images = get_option("issue_images");
+				$issue_pdf = get_option("issue_pdf");
+				foreach ($issues as $issue){
+					$name = str_replace(" ", "_", $issue->name); 
+					$issue_image_path = $issue_images[$name];
+					$issue_download_path = $issue_pdf[$name];
+					//echo $issue_image_path;
+					if ($issue_image_path!=""){
+					?>
+                    <div class="left clearfix">
+						<a href="<?php echo get_permalink('4'); ?>/?issue_id=<?php echo $issue->term_id;?>" rel="bookmark">    
+							<div class="issue_pic" style="background: #FFF url(<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo $issue_image_path; ?>&h=100&w=76&zc=1&q=90) no-repeat top left;">
+                           </div></a>
+		                       
+		                       <?php if ($issue_download_path!=""){ ?>
+		                       <div class="issue_title"><?php echo $issue->name?></div>
+		                       <a href="<?php echo bloginfo('template_url'); echo $issue_download_path; ?>" class="issue_download">Download</a>
+		                       
+		                       <?php } else { ?>
+
+		                       <span class="issue_download"></span>
+		                       <?php } ?>
+
+    						
+
+                	</div>
+                <?php }
+				} ?>
+
+                
+                </div>
+                </div>
+                </div>
+                </div>
+        </div><!--//Previous Issues-->
+		<?php } ?>
 
 
 
-if ( 'content' != $current_layout ) :
+<?php if ( 'content' != $current_layout ) :
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
 		
-			<?php if ( !is_home() ) { get_template_part('nav_menu', 'sidebar');  } ?>
+			<?php if ( !is_home()) { get_template_part('nav_menu', 'sidebar');  } ?>
 			
 			<?php //get_template_part('nav_side', 'promo'); ?>
 			
@@ -131,8 +207,9 @@ google.setOnLoadCallback(googlesearch);
 </script>
 		
 	 <?php } else {  ?>
-			
+			<?php if($is_issue_page!=1 ) { ?>
 	 <?php get_template_part('nav_menu', 'sidebar');  ?>
+	 <?php } ?>
 	 <?php get_template_part('nav_side', 'promo'); ?>
 	 <?php } ?>
 	
