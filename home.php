@@ -612,7 +612,7 @@ while (have_posts()) : the_post();?>
 						
 
 							
-<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-24,-470","offset" => '2', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-1080,-20,-24,-470","offset" => '2', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
