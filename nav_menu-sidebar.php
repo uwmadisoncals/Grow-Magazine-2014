@@ -118,11 +118,11 @@ function cals_page_navigation_menu($post, $parent_before = '', $parent_after= ''
 <circle cx="40.6" cy="41.3" r="38.6"/>
 <circle cx="40.6" cy="168.8" r="38.6"/>
 <circle cx="40.6" cy="306.1" r="38.6"/>
-</svg> <span>Summer 2014 Issue</span></h3>
+</svg> <span>Fall 2014 Issue</span></h3>
 
 					<div class="tocContent">
 						<ul>
-						<?php query_posts(array('cat' => '-470', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '-470,-1080', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>

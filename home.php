@@ -51,11 +51,11 @@ while (have_posts()) : the_post();?>
 </svg>      
 <?php endwhile; ?>
 <?php wp_reset_query(); ?>
-				 <span>Summer 2014 Issue</span></a></h3>
+				 <span>Fall 2014 Issue</span></a></h3>
 
 					<div class="tocContent">
 						<ul>
-						<?php query_posts(array('cat' => '26', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '26,-1080', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
@@ -107,7 +107,7 @@ while (have_posts()) : the_post();?>
 
 							  <?php endwhile; ?>
 						<?php endif; ?>
-						<?php query_posts(array('cat' => '-470,-26', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '-470,-26,-1080', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
