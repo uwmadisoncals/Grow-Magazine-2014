@@ -57,7 +57,15 @@ echo do_shortcode( $shortcode );?>
 		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php twentyeleven_posted_on(); ?>
+			<?php //twentyeleven_posted_on(); ?>
+			<strong>
+			<?php
+                    $written_by = get_post_meta($post->ID, 'Author', true);
+                    if ($written_by!="") {
+                        echo 'By '.$written_by;
+                    }?>
+			</strong>
+                    <div><?php the_time('l, F jS, Y'); ?></div>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
