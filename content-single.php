@@ -27,9 +27,9 @@ echo do_shortcode( $shortcode );?>
 	
 	<?php } else {
 
-	if ( has_post_thumbnail() ) { 
-		echo get_the_post_thumbnail($page->ID, 'large');
-	} else {
+	if ( has_post_thumbnail() ) {  ?>
+		<div class="staticImage"><?php echo get_the_post_thumbnail($page->ID, 'large'); ?></div>
+	<?php } else {
 
 
 		if (get_post_meta($post->ID, 'flickr_slideshow_url', true)!="") {

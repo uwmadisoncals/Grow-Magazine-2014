@@ -4635,7 +4635,7 @@ min-height: 220px;
 }
 
 .home .row {
-	margin-bottom: 1em;
+	margin-bottom: 0.4em;
 }
 
 .sidebarRow {
@@ -4828,8 +4828,8 @@ min-height: 220px;
 
 
 				img {
-						width: auto;
-						height: 100%;
+						width: 100%;
+						height: auto;
 					}
 			}
 		}
@@ -8929,10 +8929,18 @@ body.search .filtered {
 	margin-left: -30px;
 	margin-right: -30px;
 	margin-bottom: 0px;
+
+
 }
 
 .featuredImage img {
 	width: 100%;
+
+}
+
+.featuredImage .staticImage {
+	max-height: 430px;
+	overflow: hidden; 
 
 }
 
