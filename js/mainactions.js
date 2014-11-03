@@ -4,6 +4,12 @@ $(function(){
 /***** Main Parallax/position functions ******/
        //ar chromefix;
 
+
+       $(".galleryShortcut").click(function(e) {
+       		e.preventDefault();
+       		$(".featuredImage .gallery a").first().click();
+       });
+
        function parallaxIt(obj,ratio,imgtype,following,header) {
            if(!header) {
              header = false;

@@ -407,7 +407,7 @@ a img {
 
 .wp-caption .wp-caption-text, dd.gallery-caption {
 	float: right;
-	
+	width: 60%;
 	text-align: left;
 	font-family: "Raleway","Open Sans",sans-serif;
 	padding: 1em;
@@ -5810,7 +5810,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 	bottom: 180px;
 	left: 0px;
 	right: 0px;
-	height: 100px;
+	height: 170px;
 	z-index:3;
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.7))); /* Chrome,Safari4+ */
@@ -5819,6 +5819,29 @@ background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* O
 background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* IE10+ */
 background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
+}
+
+.galleryShortcut {
+	position: relative;
+	float: left;
+	color: rgba(0,0,0,0.8);
+	font-size: 1.2em;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 0.7em;
+	border-radius: 3px;
+	margin-top: -60px;
+	z-index:5;
+
+	svg {
+		height: 1.2em;
+		width: 1.2em;
+		padding-right: 0.3em;
+		float: left;
+
+		path,polygon,rect,circ {
+			/*fill: rgba(0,0,0,0.6) !important;*/
+		}
+	}
 }
 
 .headertransition {
@@ -6614,10 +6637,10 @@ display: block;
 
 .collegeFeature li .featureCaption p, .collegeFeature .iosSlider p {
 	margin: 0px;
-	font-weight: 300;
+	font-weight: 500;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
-	/*color: #dadada;*/
+	color: #f4d063;
 }
 
 .newsItem {
