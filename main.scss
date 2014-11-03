@@ -4647,6 +4647,11 @@ min-height: 220px;
 .tocContent ul li {
 	padding-top: 0.4em;
 	padding-bottom: 0.4em;
+
+}
+
+.tocContent .row {
+	margin-bottom: 0px;
 }
 
 .tocContent ul {
@@ -4800,7 +4805,7 @@ min-height: 220px;
 					a {
 						display: block;
 						font-weight: 300;
-						font-size: 1.25em;
+						font-size: 1.1em;
 						font-family: "Raleway";
 						padding-right: 1em;
 						min-height: 40px;
