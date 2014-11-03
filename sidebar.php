@@ -60,7 +60,7 @@ if ($is_issue_page==1){?>
 					?>
                     <div class="left clearfix">
 						<a href="<?php echo get_permalink('4'); ?>/?issue_id=<?php echo $issue->term_id;?>" rel="bookmark">    
-							<div class="issue_pic" style="background: #FFF url(<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo $issue_image_path; ?>&h=100&w=76&zc=1&q=90) no-repeat top left;">
+							<div class="issue_pic" style="background: #FFF url(<?php echo $issue_image_path; ?>) no-repeat top left; background-size: cover;">
                            </div></a>
 		                       
 		                       <?php if ($issue_download_path!=""){ ?>

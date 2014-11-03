@@ -4642,6 +4642,18 @@ min-height: 220px;
 		}
 	}
 
+.gform_wrapper input {
+	border: 1px solid rgba(0,0,0,0.12);
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.gform_wrapper input[type=text], .gform_wrapper input[type=url], .gform_wrapper input[type=email], .gform_wrapper input[type=tel], .gform_wrapper input[type=number], .gform_wrapper input[type=password] {
+	padding-left: 0.7em !important;
+	padding-right: 0.7em !important;
+	box-sizing: border-box;
+}
+
 .issueList .box_content {
 	padding: 1em;
 
@@ -4650,6 +4662,7 @@ min-height: 220px;
 		display:block;
 		height: 100px;
 		width: 76px;
+		margin-right: 1em;
 	}
 
 	.issues .left {
@@ -4662,7 +4675,7 @@ min-height: 220px;
 	.issue_pic {
 		height: 100px;
 		width: 76px;
-		background-size: cover;
+		background-size: 100% auto;
 	}
 
 	.issue_title {
