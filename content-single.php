@@ -14,11 +14,6 @@
 	
 	//FLICKR BOX or IMAGE BOX
 	global $current_user;
-	
-	if ( has_post_thumbnail() ) { 
-		echo get_the_post_thumbnail($page->ID, 'large');
-	} else {
-
 
 		
 
@@ -32,7 +27,9 @@ echo do_shortcode( $shortcode );?>
 	
 	<?php } else {
 
-
+	if ( has_post_thumbnail() ) { 
+		echo get_the_post_thumbnail($page->ID, 'large');
+	} else {
 
 
 		if (get_post_meta($post->ID, 'flickr_slideshow_url', true)!="") {
@@ -42,6 +39,7 @@ echo do_shortcode( $shortcode );?>
 		}
 	}
 	}
+	
 	 ?>
 	</div>
 	
