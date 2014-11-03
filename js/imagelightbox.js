@@ -306,7 +306,7 @@
 		{
 			quitLightbox();
 			return this;
-		}; 
+		};
 
 		return this;
 	};

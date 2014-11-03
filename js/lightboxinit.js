@@ -204,10 +204,10 @@
 		var selectorF = '.gallery a, .tiled-gallery a';
 		var instanceF = $( selectorF ).imageLightbox(
 		{
-			onStart:		function() { overlayOn(); closeButtonOn( instanceF ); arrowsOn( instanceF, selectorF ); },
-			onEnd:			function() { overlayOff(); captionOff(); closeButtonOff(); arrowsOff(); activityIndicatorOff(); },
+			onStart:		function() { overlayOn(); closeButtonOn( instanceF ); navigationOn( instanceF, selectorF ); },
+			onEnd:			function() { overlayOff(); captionOff(); closeButtonOff(); navigationOff(); activityIndicatorOff(); },
 			onLoadStart: 	function() { captionOff(); activityIndicatorOn(); },
-			onLoadEnd:	 	function() { captionOn(); activityIndicatorOff(); $( '.imagelightbox-arrow' ).css( 'display', 'block' ); }
+			onLoadEnd:	 	function() { captionOn(); activityIndicatorOff(); navigationUpdate( selectorF ); }
 		});
 
 	});
