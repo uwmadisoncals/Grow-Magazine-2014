@@ -4841,7 +4841,7 @@ min-height: 220px;
 
 
 .moreButton:link, .moreButton:visited {
-
+	display: none !important;
 	position: absolute;
 	top: 13px;
 	left: -210px;
