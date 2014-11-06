@@ -407,7 +407,7 @@ while (have_posts()) : the_post();?>
 						
 						<div class="box span-100 dropin">
 
-							
+							<h2>Feature</h2>
 <?php query_posts(array('category__and' => array(17,$current_issue), "cat" => "-26", "showposts" => '1', "offset" => "1", "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
@@ -431,7 +431,10 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_excerpt(); ?></p>
+											<p><?php if ($post->post_excerpt != "" ) {
+echo "<p><b>".$post->post_excerpt."</b></p>";
+}
+?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -473,7 +476,7 @@ while (have_posts()) : the_post();?>
 
 						<div class="box span-100 dropin2">
 
-							
+							<h2>Field Notes</h2>
 <?php query_posts(array('category__and' => array(27,$current_issue), "showposts" => '1', "orderby" => "post_date", "order" => "asc")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
@@ -497,7 +500,10 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_excerpt(); ?></p>
+											<p><?php if ($post->post_excerpt != "" ) {
+echo "<p><b>".$post->post_excerpt."</b></p>";
+}
+?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -544,7 +550,7 @@ while (have_posts()) : the_post();?>
 					<div class="span-50 box doubleheight">
 						
 							
-<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-1080,-20,-24,-470","offset" => '1', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-255,-1080,-20,-24,-470","offset" => '1', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -567,7 +573,10 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_excerpt(); ?></p>
+											<p><?php if ($post->post_excerpt != "" ) {
+echo "<p><b>".$post->post_excerpt."</b></p>";
+}
+?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -612,7 +621,7 @@ while (have_posts()) : the_post();?>
 						
 
 							
-<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-1080,-20,-24,-470","offset" => '2', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array(165,$current_issue), "cat"=>"-255,-1080,-20,-24,-470", "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -635,7 +644,10 @@ while (have_posts()) : the_post();?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_excerpt(); ?></p>
+											<p><?php if ($post->post_excerpt != "" ) {
+echo "<p><b>".$post->post_excerpt."</b></p>";
+}
+?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>

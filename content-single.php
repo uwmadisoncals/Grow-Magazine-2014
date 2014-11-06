@@ -53,7 +53,10 @@ echo do_shortcode( $shortcode );?>
 						
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
+		<div class="entry-excerpt"><?php if ($post->post_excerpt != "" ) {
+echo "<p><b>".$post->post_excerpt."</b></p>";
+}
+?></div>
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php //twentyeleven_posted_on(); ?>
@@ -64,7 +67,7 @@ echo do_shortcode( $shortcode );?>
                         echo 'By '.$written_by;
                     }?>
 			</strong>
-                    <div><?php the_time('l, F jS, Y'); ?></div>
+                    
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
