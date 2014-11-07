@@ -4391,6 +4391,12 @@ a:active code {
 	float:right;
 }
 
+
+.search-results #content {
+	width: 100% !important;	
+}
+
+
 #branding {
 
 .globalSearch {
@@ -4402,6 +4408,7 @@ a:active code {
 	margin-top: -6px;
 	
 	.searchClear {
+		display: none !important;
 		right: 3px !important;
 		top: 4px !important;
 	}
