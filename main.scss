@@ -4383,14 +4383,52 @@ a:active code {
 	border-bottom: none;
 }
 
-.globalSearch {
-	display: none;
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	z-index:5;
+.utilityMenu {
+	width: 100%;
+}
 
+.menu-utility-links-container {
+	float:right;
+}
+
+#branding {
+
+.globalSearch {
+	display: block;
+	position: relative;
+	float: right;
+	margin-left: 2em;
+	z-index:5;
+	margin-top: -6px;
+	
+	.searchClear {
+		right: 3px !important;
+		top: 4px !important;
+	}
+	
+	.filtered {
+		display: none !important;
+	}
+	
+	
+	#searchform {
+		position: relative;
+		
+		#s {
+			background-color: rgba(0,0,0,0.15);
+			width: 80px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			border-radius: 2px;
+			background-position: 5px 4px;		
+			border-left: none;	
+			font-weight: normal;
+			letter-spacing: normal;
+			text-transform: none;
+		}
+	}
+
+}
 
 }
 

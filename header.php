@@ -221,10 +221,53 @@ while (have_posts()) : the_post();?>
 			</a>
 			<?php endif; // end check for removed header image ?>
 
-			<div class="utilityMenu">
-				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
-			</div>
+			<div class="utilityMenu clearfix">
+				
+			
+			
+			<div class="globalSearch clearfix">
+				<?php get_search_form(); ?>
+				<div class="filtered" style="display: none;">
+					<ul>
+					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
+					<?php
 
+
+$args = array( 'posts_per_page' => 100 );
+
+$myposts = get_posts( $args );
+foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+	<li>
+		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	</li>
+<?php endforeach;
+wp_reset_postdata();
+
+$pages = get_pages();
+  foreach ( $pages as $page ) {
+  	echo '<li>';
+  	echo '<a href="' . get_page_link( $page->ID ) . '">';
+	echo $page->post_title;
+	echo '</a>';
+	echo '</li>';
+
+  }
+
+
+  //cals_uw_directory_search($small=true, $add_class = 'search_results');
+
+  ?>
+
+						<!-- Hard code any additional search terms here -->
+						<!--<li><a href="#">Search Item 1</a></li>-->
+
+					</ul>
+
+					<div class="directory"></div>
+				</div>
+				</div>
+				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
+</div>
 
 			</hgroup>
 
@@ -282,47 +325,7 @@ while (have_posts()) : the_post();?>
   				
 				
 
-				<div class="globalSearch">
-				<?php get_search_form(); ?>
-				<div class="filtered" style="display: none;">
-					<ul>
-					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
-					<?php
-
-
-$args = array( 'posts_per_page' => 100 );
-
-$myposts = get_posts( $args );
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-	<li>
-		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-	</li>
-<?php endforeach;
-wp_reset_postdata();
-
-$pages = get_pages();
-  foreach ( $pages as $page ) {
-  	echo '<li>';
-  	echo '<a href="' . get_page_link( $page->ID ) . '">';
-	echo $page->post_title;
-	echo '</a>';
-	echo '</li>';
-
-  }
-
-
-  //cals_uw_directory_search($small=true, $add_class = 'search_results');
-
-  ?>
-
-						<!-- Hard code any additional search terms here -->
-						<!--<li><a href="#">Search Item 1</a></li>-->
-
-					</ul>
-
-					<div class="directory"></div>
-				</div>
-				</div>
+				
 			
 				</div>
 
