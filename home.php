@@ -107,7 +107,7 @@ while (have_posts()) : the_post();?>
 
 							  <?php endwhile; ?>
 						<?php endif; ?>
-						<?php query_posts(array('cat' => '-470,-26,-1080', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '17,-470,-26,-1080', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'desc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
@@ -159,6 +159,60 @@ while (have_posts()) : the_post();?>
 
 							  <?php endwhile; ?>
 						<?php endif; ?>
+						
+						<?php query_posts(array('cat' => '-17,-470,-26,-1080', 'category__and' => array($current_issue), "showposts" => '40', 'orderby'=>'title', 'order'=> 'asc')); ?>
+
+							<?php if (have_posts()) : ?>
+							  <?php while (have_posts()) : the_post();  ?>
+
+												
+							  	<li class="row clearfix">
+														
+							  		
+														
+								
+
+
+
+
+							  	<div class="span-25 alt">
+							  		<div class="tocPhoto">
+							  <?php	if ( has_post_thumbnail() ) {
+
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'thumbnail');
+
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 //echo catch_that_news_image();
+							// echo '" alt="" />';
+
+		    					 
+							//get article image from flickr
+							grow_get_article_image($size='thumbnail');
+		
+
+						} ?>
+							</div>
+						</div>
+										<div class="tocItem span-75">
+											<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											
+											</div>
+                                             
+                            				 
+
+										</li>
+
+
+
+
+									
+
+							  <?php endwhile; ?>
+						<?php endif; ?>
+
 						</ul>
 					</div>
 
