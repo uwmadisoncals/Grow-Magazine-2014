@@ -1735,7 +1735,11 @@ border-radius: 0px;
 }
 
 .singleEntryMeta {
-	display: none;
+	display: block;
+	
+	a {
+		color: #bb2726;
+	}
 }
 
 .entry-meta a {
