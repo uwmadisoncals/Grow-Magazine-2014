@@ -121,7 +121,7 @@ $current_colorscheme = $options['link_color'];
 ?>
 
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
-<?php $current_issue = get_option('current_issue'); ?>
+<?php $current_issue_header = get_option('current_issue'); ?>
 <div id="mobile-menu">
 	<div id="mobile-menu-inner">
 	<!--<div class="mobile-search"><input type="search" placeholder="Search" /></div>-->
@@ -150,7 +150,7 @@ $current_colorscheme = $options['link_color'];
 
 
 					<?php 
-query_posts(array('category__and' => array(26,$current_issue), "showposts" => '1') );
+query_posts(array('category__and' => array(26,$current_issue_header), "showposts" => '1') );
 while (have_posts()) : the_post();?>
 	<img src="<?php echo get_post_meta($post->ID, "image_featured_article", $single = true); ?>" alt=" "/>
             
@@ -305,7 +305,7 @@ $pages = get_pages();
 
 
 <?php 
-query_posts(array('category__and' => array(1080,$current_issue), "showposts" => '1') );
+query_posts(array('category__and' => array(1080,$current_issue_header), "showposts" => '1') );
 while (have_posts()) : the_post();?>
 	<a href="<?php the_field('pdf_issue'); ?>"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
@@ -356,7 +356,7 @@ while (have_posts()) : the_post();?>
 
 
 					<?php 
-query_posts(array('category__and' => array(26,$current_issue), "showposts" => '1') );
+query_posts(array('category__and' => array(26,$current_issue_header), "showposts" => '1') );
 $loopcount = 0;
 while (have_posts()) : the_post();
 $loopcount = $loopcount + 1;
