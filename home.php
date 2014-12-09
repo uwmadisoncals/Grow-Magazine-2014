@@ -318,7 +318,7 @@ while (have_posts()) : the_post();?>
 							  <?php endwhile; ?>
 						<?php endif; ?>
 						
-						<?php query_posts(array('cat' => '15', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '15', 'category__and' => array($current_issue), "showposts" => '5', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
@@ -371,7 +371,7 @@ while (have_posts()) : the_post();?>
 							  <?php endwhile; ?>
 						<?php endif; ?>
 						
-						<?php query_posts(array('cat' => '22', 'category__and' => array($current_issue), "showposts" => '10', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '22', 'category__and' => array($current_issue), "showposts" => '5', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>
@@ -424,7 +424,7 @@ while (have_posts()) : the_post();?>
 							  <?php endwhile; ?>
 						<?php endif; ?>
 						
-						<?php query_posts(array('cat' => '24', 'category__and' => array($current_issue), "showposts" => '10', 'orderby'=>'title', 'order'=> 'asc')); ?>
+						<?php query_posts(array('cat' => '24', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'asc')); ?>
 
 							<?php if (have_posts()) : ?>
 							  <?php while (have_posts()) : the_post();  ?>

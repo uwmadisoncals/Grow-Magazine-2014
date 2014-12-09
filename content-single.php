@@ -28,7 +28,11 @@ echo do_shortcode( $shortcode );?>
 	<?php } else {
 
 	if ( has_post_thumbnail() ) {  ?>
-		<div class="staticImage"><?php echo get_the_post_thumbnail($page->ID, 'large'); ?></div>
+		<?php if(get_field('hide_featured_image_in_article')) { ?>
+		
+		<?php } else { ?>
+			<div class="staticImage"><?php echo get_the_post_thumbnail($page->ID, 'large'); ?></div>
+		<?php } ?>
 	<?php } else {
 
 
