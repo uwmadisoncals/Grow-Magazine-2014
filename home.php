@@ -51,7 +51,7 @@ while (have_posts()) : the_post();?>
 </svg>      
 <?php endwhile; ?>
 <?php wp_reset_query(); ?>
-				 <span>Spring 2015 Issue</span></a></h3>
+				 <span>Summer 2015 Issue</span></a></h3>
 
 					<div class="tocContent">
 						<ul>
@@ -508,7 +508,7 @@ while (have_posts()) : the_post();?>
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -518,7 +518,7 @@ while (have_posts()) : the_post();?>
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -569,7 +569,7 @@ while (have_posts()) : the_post();?>
 	  <?php endwhile; ?>
 <?php endif; ?>
 
-<?php query_posts(array('category__and' => array(17, $current_issue), "showposts" => '1', 'offset' => '1', 'orderby'=>'date', 'order'=> 'desc')); ?>
+<?php query_posts(array('category__and' => array(17, $current_issue), "showposts" => '1', 'orderby'=>'date', 'order'=> 'desc')); ?>
 
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
@@ -588,7 +588,7 @@ while (have_posts()) : the_post();?>
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -598,7 +598,7 @@ while (have_posts()) : the_post();?>
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -665,7 +665,7 @@ while (have_posts()) : the_post();?>
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -675,7 +675,7 @@ while (have_posts()) : the_post();?>
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -726,14 +726,14 @@ while (have_posts()) : the_post();?>
 						<div class="box span-100 dropin">
 
 							<h2>Feature</h2>
-<?php query_posts(array('category__and' => array(17,$current_issue), "cat" => "-26", "showposts" => '1', "offset" => "1", "orderby" => "date", "order" => "des")); ?>
+<?php query_posts(array('category__and' => array(17,$current_issue), "showposts" => '1', "offset" => "1", "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -743,7 +743,7 @@ while (have_posts()) : the_post();?>
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -802,7 +802,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -812,7 +812,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -875,7 +875,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -885,7 +885,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
@@ -946,7 +946,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
   <?php	if ( has_post_thumbnail() ) {
 
 		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'medium');
+		    				echo get_the_post_thumbnail($page->ID, 'large');
 
 		    				} else {
 							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
@@ -956,7 +956,7 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
 
 		    					 
 							//get article image from flickr
-							grow_get_article_image($size='medium');
+							grow_get_article_image($size='large');
 		
 
 						} ?>
