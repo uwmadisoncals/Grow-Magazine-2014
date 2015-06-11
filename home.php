@@ -921,8 +921,8 @@ echo "<p><b>".$post->post_excerpt."</b></p>";
 					<div class="row clearfix">
 					<div class="span-50 box doubleheight">
 						
-							
-<?php query_posts(array('category__and' => array($current_issue), "cat"=>"-255,-1080,-20,-24,-470","offset" => '1', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
+<!-- show give, but not others -->
+<?php query_posts(array('category__and' => array(1357,$current_issue), "cat"=>"-255,-1080,-20,-24,-470","offset" => '0', "showposts" => '1', "orderby" => "date", "order" => "des")); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
