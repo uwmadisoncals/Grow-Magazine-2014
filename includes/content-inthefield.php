@@ -1,14 +1,14 @@
 <?php
 /**
- * Template Name: In the Field
+ * The Template for displaying posts with Aside(ie. In the field) Post Formats.
+ * @package WordPress
+ * @subpackage CALSv1
+ * @since CALS 1.0
  */
 
 get_header(); ?>
 
-<?php $current_issue = get_option('current_issue');
-
-//logit( $current_issue, '$current_issue:' ); 
- ?>
+<?php $current_issue = get_option('current_issue');?>
 
 
 	<div id="main">
@@ -17,15 +17,11 @@ get_header(); ?>
 		
 			<div id="content" role="main">
 
-			<?php /* query_posts(array('cat' => '470', 'category__and' => array($current_issue), "showposts" => '1', 'orderby'=>'title', 'order'=> 'desc')); */ ?>
-
 			<?php 
 			$args = array(
 				'posts_per_page'=>'-1',
 				'orderby'=>'title',
 				'order'=>'desc',
-				//'cat'=>'470',
-				//'category__and'=>'array($current_issue)'
 				'category__and' => array(470,$current_issue)
 				);
 
@@ -40,11 +36,9 @@ get_header(); ?>
 			<?php if ($inTheField_query->have_posts()) : ?>
 			 	<?php while ($inTheField_query->have_posts()) : $inTheField_query->the_post();  ?>
 
-					<?php $thisID = get_the_ID(); 
-					//logit( $thisID, '$thisID:' ); ?>
+					<?php $thisID = get_the_ID(); ?>
 					
-					
-					<?php get_template_part( 'content', 'inTheField' ); ?>
+					<?php get_template_part( 'content', 'aside' ); ?>
 
 			 	<?php endwhile; ?>
 			<?php endif; ?>	
@@ -60,9 +54,3 @@ get_header(); ?>
 <?php get_footer(); ?>
 
 </div>
-
-
-
-
-
-
