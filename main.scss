@@ -813,6 +813,47 @@ body {
 	width: 940px;
 }
 
+/* Page Template: in_the_field.php */
+
+body.page-template-in_the_field{
+
+	div#main{
+
+		div#primary{
+
+			div#content{
+				
+				header.entry-header.inTheField{
+					
+					h1{
+						font-size:4em;
+					}
+				}
+
+				article{
+					box-sizing:border-box;
+					div.entry-content{
+						
+						img{
+							display:block;
+							float:left;
+						}
+						p{
+							display:block;
+							box-sizing:border-box;
+							float:left;
+							width:75%;
+							padding: 1em 0 1em 1em;
+							font-size:1.2em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -8691,6 +8732,17 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+/* Other Clearfix Option*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
 
 header {
 position: relative;
