@@ -28,9 +28,21 @@ get_header(); ?>
 			$inTheField_query = new WP_Query($args);
 
 			 ?>
+	
+	<div class="featuredImage">
+		<div class="staticImage">
+			<?php echo get_the_post_thumbnail($post->ID,'large'); ?>
+		</div>
+	</div>
 
 	<header class="entry-header inTheField">
 		<h1 class="entry-title"><?php single_post_title(); ?></h1>
+
+		<?php 
+		logit($post,'$post: ');
+		logit($post->ID,'$post->ID: ');
+		?>
+
 	</header><!-- .entry-header -->
 
 			<?php if ($inTheField_query->have_posts()) : ?>

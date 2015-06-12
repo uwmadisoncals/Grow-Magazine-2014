@@ -14,16 +14,17 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 
-
+	<header class="entry-header">
+		<h2 class="entry-title"><a href="<?php echo get_post_permalink($thisID); ?>"><?php the_title(); ?></a></h2>
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 
 		<?php if ( has_post_thumbnail() ) { ?>
 
-		<div class="itf_image_wrapper">
-			<!-- the_post_thumbnail(); -->
-			<a href="<?php echo get_post_permalink($thisID); ?>"><?php echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?></a>
-		</div>
+		<!-- the_post_thumbnail(); -->
+		<a href="<?php echo get_post_permalink($thisID); ?>"><?php echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?></a>
+		
 		
 
 		<?php } else {
@@ -39,17 +40,7 @@
 
 		} ?>
 
-		<div class="itf_main_wrapper">
-
-			<div class="itf_title_wrapper">
-				<h2 class="itf_title"><a href="<?php echo get_post_permalink($thisID); ?>"><?php the_title(); ?></a></h2>
-			</div><!-- .entry-header -->
-			<div class="itf_excerpt">
-			<?php the_excerpt(); ?>
-			</div>
-		</div><!-- END .itf_main_wrapper -->
-
-		
+		<?php the_excerpt(); ?>
 		
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
