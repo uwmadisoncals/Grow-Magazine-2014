@@ -560,6 +560,26 @@ function twentyeleven_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyeleven_widgets_init' );
 
+/*custom widgetized area*/
+
+/**
+ * Register Widget Area
+ */
+
+function grow_widgets_init() {
+ 
+	register_sidebar( array(
+		'name' => 'Cheesemaker Sidebar',
+		'id' => 'cheesemaker_sidebar',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'grow_widgets_init' );
+
+
 if ( ! function_exists( 'twentyeleven_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable

@@ -838,6 +838,15 @@ body.single-format-aside{
 						margin-bottom:.2em;
 
 					}
+					div.summary{
+						margin-bottom:1em;
+						margin-top:1em;
+						font-size:1.2em;
+					}
+					strong.entry-meta{
+						margin-bottom:2em;
+						display:block;
+					}
 				}
 
 				div.itf_content{
@@ -876,6 +885,20 @@ body.single-format-aside{
 		}
 	}
 
+}
+
+/* Text Widget on Cheesemaker Sidebar, post id:7891 */
+
+body.single-format-aside{
+	div.textwidget{
+		display: block;
+		background-color:lighten(#a5988e, 20%);
+		padding:1em;
+		box-sizing:border-box;
+		float: right;
+    	margin-bottom: 1em;
+    	width: 230px;
+	}
 }
 
 /* Alignment */

@@ -19,9 +19,14 @@ get_header(); ?>
 
 			<?php 
 			$args = array(
+				//'posts_per_page'=>'-1',
+				//'orderby'=>'title',
+				//'order'=>'desc',
+				//'category__and' => array(470,$current_issue)
 				'posts_per_page'=>'-1',
-				'orderby'=>'title',
-				'order'=>'desc',
+				'orderby'=>'meta_value_num',
+				'meta_key'=>'cheesemaster_order',
+				'order'=>'asc',
 				'category__and' => array(470,$current_issue)
 				);
 
@@ -29,11 +34,11 @@ get_header(); ?>
 
 			 ?>
 	
-	<div class="featuredImage">
-		<div class="staticImage">
-			<?php echo get_the_post_thumbnail($post->ID,'large'); ?>
-		</div>
-	</div>
+	<!--<div class="featuredImage">
+		<div class="staticImage"> -->
+			<?php /* echo get_the_post_thumbnail($post->ID,'large'); */ ?>
+		<!-- </div>
+	</div> -->
 
 	<header class="entry-header inTheField">
 		<h1 class="entry-title"><?php single_post_title(); ?></h1>
@@ -42,6 +47,7 @@ get_header(); ?>
 		//logit($post,'$post: ');
 		//logit($post->ID,'$post->ID: ');
 		?>
+		<div class="summary">Graduates of the Wisconsin Master Cheesemaker® program run by the CALS-based Center for Dairy Research, in partnership with the Wisconsin Milk Marketing Board</div>
 	<strong class="entry-meta">By <?php the_author(); ?></strong>
 	</header><!-- .entry-header -->
 
@@ -65,7 +71,14 @@ get_header(); ?>
 			<?php endif; ?>	
 				
 			</div><!-- #content -->
+
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('cheesemaker_sidebar') ) : 
+ 
+			endif; ?>
+					
 			<?php get_sidebar(); ?>
+
+
 			
 			<div class="clear"></div>
 			
