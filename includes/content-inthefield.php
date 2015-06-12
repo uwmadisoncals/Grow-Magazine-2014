@@ -42,8 +42,17 @@ get_header(); ?>
 		logit($post,'$post: ');
 		logit($post->ID,'$post->ID: ');
 		?>
-
+	<strong class="entry-meta">By <?php the_author(); ?></strong>
 	</header><!-- .entry-header -->
+
+	<div class="itf_content"> <?php the_content(); ?> </div>
+
+	<?php if(!$post->post_content=="") : ?>
+
+	<hr>
+
+	<?php endif; ?>
+	
 
 			<?php if ($inTheField_query->have_posts()) : ?>
 			 	<?php while ($inTheField_query->have_posts()) : $inTheField_query->the_post();  ?>
