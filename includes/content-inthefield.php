@@ -39,8 +39,8 @@ get_header(); ?>
 		<h1 class="entry-title"><?php single_post_title(); ?></h1>
 
 		<?php 
-		logit($post,'$post: ');
-		logit($post->ID,'$post->ID: ');
+		//logit($post,'$post: ');
+		//logit($post->ID,'$post->ID: ');
 		?>
 	<strong class="entry-meta">By <?php the_author(); ?></strong>
 	</header><!-- .entry-header -->
