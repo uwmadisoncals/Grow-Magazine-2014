@@ -51,7 +51,7 @@ while (have_posts()) : the_post();?>
 </svg>      
 <?php endwhile; ?>
 <?php wp_reset_query(); ?>
-				 <span>Summer 2015 Issue</span></a></h3>
+				 <span>Spring 2015 Issue</span></a></h3>
 
 					<div class="tocContent">
 						<ul>
