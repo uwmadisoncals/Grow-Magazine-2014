@@ -47,17 +47,71 @@ get_header(); ?>
 		//logit($post,'$post: ');
 		//logit($post->ID,'$post->ID: ');
 		?>
-		<div class="summary">Graduates of the Wisconsin Master Cheesemaker® program run by the CALS-based Center for Dairy Research, in partnership with the Wisconsin Milk Marketing Board</div>
-	<strong class="entry-meta">By <?php the_author(); ?></strong>
+		<div class="summary"><?php the_content(); ?></div>
+	
 	</header><!-- .entry-header -->
 
-	<div class="itf_content"> <?php the_content(); ?> </div>
+	
 
 	<?php if(!$post->post_content=="") : ?>
 
 	<hr>
 
 	<?php endif; ?>
+	
+	
+	<?php query_posts(array('cat' => '470', 'category__and' => array($current_issue), "showposts" => '45', 'orderby'=>'title', 'order'=> 'asc')); ?>
+
+							<?php if (have_posts()) : ?>
+							  <?php while (have_posts()) : the_post();  ?>
+
+												
+							  	<div class="row clearfix">
+														
+							  		
+														
+								
+
+
+
+
+							  	<div class="span-25 alt">
+							  		<div class="tocPhoto">
+							  <?php	if ( has_post_thumbnail() ) {
+
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'thumbnail');
+
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 //echo catch_that_news_image();
+							// echo '" alt="" />';
+
+		    					 
+							//get article image from flickr
+							grow_get_article_image($size='thumbnail');
+		
+
+						} ?>
+							</div>
+						</div>
+										<div class="tocItem span-75">
+											<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											
+											</div>
+                                             
+                            				 
+
+										</div>
+
+
+
+
+									
+
+							  <?php endwhile; ?>
+						<?php endif; ?>
 	
 
 			<?php if ($inTheField_query->have_posts()) : ?>
