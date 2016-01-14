@@ -16,7 +16,7 @@ $(function(){
        });
        
        $(window).click(function(e) {
-	       $(".pdfDownload a .downloadMenu").fadeOut(300);
+	       $(".pdfDownload .downloadMenu").fadeOut(300);
 	       
        }); 
 
