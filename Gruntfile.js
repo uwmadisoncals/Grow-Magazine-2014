@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 	    },
 	  },
 	  css: {
-	    files: '**/*.scss',
+	    files: '*.scss',
 	    tasks: ['sass','concat'],
 		options: {
 	      livereload: true,
@@ -75,6 +75,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('styles', ['sass', 'concat']);
   grunt.registerTask('default', ['sass']);
   grunt.registerTask('default', ['concat']);
   grunt.registerTask('default', ['watch']);

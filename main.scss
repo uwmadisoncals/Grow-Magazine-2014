@@ -4547,7 +4547,57 @@ a:active code {
 	-moz-border-radius-bottomright: 3px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
-	overflow: hidden;
+	
+	
+	.downloadMenu {
+			display: none;
+			position: absolute;
+			top: 48px;
+			left: -70px;
+			
+			width: 250px;
+			z-index:10;
+			background: #fff;
+			border-radius: 4px;
+			
+			box-shadow: 0px 1px 14px rgba(0,0,0,0.3);
+			
+			a {
+				background: #fff;
+				border-radius: 4px;
+				color: rgba(0,0,0,0.7);
+			}
+			
+			a:hover {
+				background: #fcae26;
+				color: #fff;
+			}
+			
+			a:first-child {
+				border-bottom-left-radius:0px;
+				border-bottom-right-radius: 0px;
+			}
+			
+			a:last-child {
+				border-top-left-radius: 0px;
+				border-top-right-radius: 0px;
+			}
+		}
+		
+	.downloadMenu:after {
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-bottom-color: #fff;
+		border-width: 11px;
+		margin-left: -11px;
+	}
 
 	a {
 		line-height: 3.3em !important;
@@ -4558,6 +4608,11 @@ a:active code {
 		text-transform: uppercase;
 		padding-left: 1.4em;
 		padding-right: 1.4em;
+		height: 39px;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		
+		
 
 		svg {
 			height: 1.3em;

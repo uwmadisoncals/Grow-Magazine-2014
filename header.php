@@ -304,6 +304,7 @@ $pages = get_pages();
 
 
 
+
 <?php 
 query_posts(array('category__and' => array(1080,$current_issue_header), "showposts" => '1') );
 while (have_posts()) : the_post();?>
@@ -319,7 +320,15 @@ while (have_posts()) : the_post();?>
 		C50,32,46,36,41.1,36z"/>
 	<path d="M25,46.7c-0.6,0-1-0.4-1-1V26c0-0.6,0.4-1,1-1s1,0.4,1,1v19.7C26,46.2,25.6,46.7,25,46.7z"/>
 </g>
-</svg> Download PDF</a>      
+</svg> Download
+
+
+</a>
+
+<div class="downloadMenu">
+	<a href="<?php the_field('pdf_issue'); ?>" target="_blank">Download PDF</a>
+	<a href="http://issuu.com/growcals">View using ISSUU</a>
+</div>      
 <?php endwhile; ?>
 <?php wp_reset_query(); ?>
 				</div>

@@ -3,6 +3,22 @@ $(function(){
 
 /***** Main Parallax/position functions ******/
        //ar chromefix;
+       
+       $(".pdfDownload > a").click(function(e) {
+	       e.preventDefault();
+	       e.stopPropagation();
+	       
+	      
+	       var menu = $(this).next();
+	      
+	      
+	       $(menu).fadeIn(300);
+       });
+       
+       $(window).click(function(e) {
+	       $(".pdfDownload a .downloadMenu").fadeOut(300);
+	       
+       }); 
 
 
        $(".galleryShortcut").click(function(e) {
