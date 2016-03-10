@@ -621,7 +621,6 @@ while (have_posts()) : the_post();?>
 				<!-- CALS News Content Box -->
 				<div class="row clearfix">
 
-
 <?php query_posts(array('category__and' => array(26, $current_issue), "showposts" => '1', 'orderby'=>'date', 'order'=> 'desc')); ?>
 
 <?php if (have_posts()) : ?>
