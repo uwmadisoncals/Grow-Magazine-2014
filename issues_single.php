@@ -17,127 +17,102 @@
 	?>
 	
     <?php //echo $current_issue; ?>
+
+	<style>
+		.box_content .issues .left {
+			float: left;
+			width: 32%;
+			margin-right: 1%;
+			margin-bottom: 4%;
+
+		}
+		
+		.issue_pic {
+			height: 220px;
+			width: 160px;
+		}
+	
+	</style>
+
+
    <div id="main">
 
 		<div id="primary"> 
 	    
 <div id="content" role="main">
-	<div id="featured_main" class="current_issue">
-            <div id="current_issue_img">
-	         <?php 
-		         //echo $current_issue;
-			 	$issue_images = get_option("issue_images");
-			 	
-				$cat_name = str_replace(" ", "_", get_cat_name($current_issue));
-				
-				//echo $cat_name;
-				if ($issue_images[$cat_name]!=""){ ?>
-				
-					<img src="<?php echo $issue_images[$cat_name];?>"/>
-                <?php	}
-			 ?>
-      		</div>
-            <div id="current_issue_desc">
-            <h2 class="pagetitle">
-            	<?php echo get_cat_name($current_issue);?>
-            </h2>
-            <div id="current_issue_excerpt">
-            	<h1>ON THE COVER</h1>
-				<?php 
-				//get article categorized as "on the cover" in current issue
-				query_posts(array('category__and' => array(184,$current_issue), "showposts" => '1') );?>	
-    			<?php	while (have_posts()) : the_post();?>
-                	<h2><a href="<?php the_permalink()?>"><?php echo the_title();?></a></h2>
-                	<h3><?php the_excerpt();?></h3>
-				<?php  endwhile; ?>		
-    		</div>
-            </div>
 
-    </div><!--/featured_main-->
+
+            <h2 class="issueTitle">List of Issues</h2>
+                <div class="box_content">
+          		<div class="issues"><?php 
+				
+				$issues = get_categories('child_of=10&hide_empty=true');
+	
+					
+				//order issues by season
+				$season_order = array('spring' => 'mar', 'summer' => 'jul', 'fall' => 'sept', 'winter' => 'nov');
+				foreach ($issues as $issue){
+					$season_info = explode(" ", $issue->name);
+					$m =  strtolower($season_info[0]);
+					$y =  $season_info[1];
+					
+					//create a timestamp array to be used to order issues
+					$key = time() - strtotime($season_order[$m].' '.$season_info[1]);
+					
+					//store in new array
+					$ordered_issues[$key] = $issue;
+					
+					 
+				}
+
+				ksort($ordered_issues);
+				$issues = $ordered_issues;
+	
+				//display issues 
+				$issue_images = get_option("issue_images");
+				$issue_pdf = get_option("issue_pdf");
+				foreach ($issues as $issue){
+					$name = str_replace(" ", "_", $issue->name); 
+					$issue_image_path = $issue_images[$name];
+					$issue_download_path = $issue_pdf[$name];
+					//echo $issue_image_path;
+					if ($issue_image_path!=""){
+					?>
+                    <div class="left clearfix">
+						<a href="<?php echo bloginfo('template_url'); echo $issue_download_path; ?>" rel="bookmark">    
+							<div class="issue_pic" style="background: #FFF url(<?php echo $issue_image_path; ?>) no-repeat top left; background-size: cover;">
+                           </div></a>
+		                       
+		                       <?php if ($issue_download_path!=""){ ?>
+		                       <div class="issue_title"><?php echo $issue->name?></div>
+		                       <a href="<?php echo bloginfo('template_url'); echo $issue_download_path; ?>" class="issue_download">Download</a>
+		                       
+		                       <?php } else { ?>
+
+		                       <span class="issue_download"></span>
+		                       <?php } ?>
+
+    						
+
+                	</div>
+                <?php }
+				} ?>
+
+                
+                </div>
+               
+        </div><!--//Previous Issues-->
+
+
+
+
+	
 
 	 
-    <div id="featured_list">
-   	<h1>ALSO FEATURED</h1>
-	<?php 
-		//GET OTHER FEATURED STORIES
-	    
-		query_posts(array('cat'=>'-26', 'category__and' => array(17,$current_issue), "showposts" => '3'));
-
-		while (have_posts()) : the_post();
-	?>
-				
-		<div class="post">
-		
-			<?php if ( get_post_meta($post->ID, 'image', true) ) { ?>
-				<a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark">
-				<img src="<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo get_post_meta($post->ID, "image", $single = true); ?>&amp;h=75&amp;w=75&amp;zc=1&amp;q=90" alt="<?php the_title(); ?>" class="th" />			
-                </a>
-				
-			<?php } ?>		
-
-			<h2><a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<p><?php echo strip_tags(get_the_excerpt(), '<a><strong>'); ?> <a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" class="more">[...more]</a></p>
-
-			
-		</div><!--/post-->
-	<?php endwhile; ?>
-	
-    </div><!--/featured_list>-->
-    
-    <div id="departments" class="current_issue_depts">
-    <h2 class="departments_title">Departments</h2>
-		<?php 
-		
-		$include = "18,19,20,21,183,27,15,22,28";
-		
-		//get all categories under "departments"
-		
-		//create list of subcategories to exclude first (grow dozen)
-		$cat_exc =  get_categories('child_of=16&hierarchical=0');
-		foreach ($cat_exc as $exc){
-			$excs[] = $exc->cat_ID;	
-		}
-		
-		//add Final Exam category to exclude list if issue being displayed is a past issue
-		if ($current_issue==get_option('current_issue')){
-			$include.=',24';
-		}
-		
-		
-				
-		$exclude = implode(",", $excs);
-			
-		
-			
-		$categories =  get_categories('child_of=14&hierarchical=0&include='.$include.'&exclude='.$exclude);
-		
-		$class="";
-		//get earticles that are on each category and belong to issue
-		foreach ($categories as $cat){
-       		query_posts(array('category__and' => array($cat->cat_ID,$current_issue), "orderby" => "post_date", "order" => "desc"));
-			$i=0;
-			while (have_posts()) : the_post();?>
-        	<div class="dept_box_current_issue_depts <?php echo $odd?>">
-				<?php if ($i==0){ ?>
-                <h1><?php echo $cat->cat_name;?></h1>		
-   		        <?php } ?>
-                <ul class="dept_items">
-                	<li ><h2><a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-        	       <p><?php echo strip_tags(get_the_excerpt(), '<a><strong>'); ?> <!--<a title="Permanent Link to <?php the_title(); ?>" href="<?php the_permalink() ?>" class="more">[...more]</a>--></p>
-        	<?php	//$odd = ( empty( $odd ) ) ? 'alt' : '';?>
-					</li>
-                </ul>
-            </div>	
-			<?php 
-			$i++;
-			endwhile; ?>
-	
-	<?php }?>
-    </div>
     
     </div>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <div class="clear"></div>
 			
