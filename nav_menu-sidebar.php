@@ -118,7 +118,7 @@ function cals_page_navigation_menu($post, $parent_before = '', $parent_after= ''
 <circle cx="40.6" cy="41.3" r="38.6"/>
 <circle cx="40.6" cy="168.8" r="38.6"/>
 <circle cx="40.6" cy="306.1" r="38.6"/>
-</svg> <span>Spring 2016 Issue</span></h3>
+</svg> <span>Fall 2017 Issue</span></h3>
 
 					<div class="tocContent">
 						<ul>
