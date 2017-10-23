@@ -79,7 +79,7 @@
 					if ($issue_image_path!=""){
 					?>
                     <div class="left clearfix">
-						<a href="<?php echo bloginfo('template_url'); echo $issue_download_path; ?>" rel="bookmark">    
+						<a href="<?php echo $issue_download_path; ?>" rel="bookmark">    
 							<div class="issue_pic" style="background: #FFF url(<?php echo $issue_image_path; ?>) no-repeat top left; background-size: cover;">
                            </div></a>
 		                       
