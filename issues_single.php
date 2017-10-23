@@ -85,7 +85,7 @@
 		                       
 		                       <?php if ($issue_download_path!=""){ ?>
 		                       <div class="issue_title"><?php echo $issue->name?></div>
-		                       <a href="<?php echo bloginfo('template_url'); echo $issue_download_path; ?>" class="issue_download">Download</a>
+		                       <a href="<?php echo $issue_download_path; ?>" class="issue_download">Download</a>
 		                       
 		                       <?php } else { ?>
 
